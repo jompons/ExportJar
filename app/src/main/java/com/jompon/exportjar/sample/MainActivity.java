@@ -24,6 +24,9 @@ import android.widget.TextView;
 
 import com.jompon.exportjar.TestJar;
 
+/**
+ * This will show using lib class by copy jar file to /libs/mylib.jar
+ */
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();

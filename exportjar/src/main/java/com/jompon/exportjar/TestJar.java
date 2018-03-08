@@ -16,6 +16,10 @@
 
 package com.jompon.exportjar;
 
+/**
+ * This will show sample create class lib
+ * and export class to jar file to /release/mylib.jar
+ */
 public class TestJar {
 
     private String test;
