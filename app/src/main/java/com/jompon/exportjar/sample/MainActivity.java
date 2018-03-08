@@ -20,23 +20,41 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.jompon.exportjar.TestJar;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
+    private TextView txtView;
+    private TextView txtView2;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        bindingView();
+        bindingData();
+    }
+
+    private void bindingView( )
+    {
+        txtView = (TextView) findViewById(R.id.txt);
+        txtView2 = (TextView) findViewById(R.id.txt2);
+    }
+
+    private void bindingData( )
+    {
         TestJar testJar = new TestJar("CONSTRUCTOR");
         TestJar testJar2 = new TestJar();
         testJar2.setTest("VALUE");
 
         Log.d(TAG, testJar.getTest()+"");
         Log.d(TAG, testJar2.getTest()+"");
+
+        txtView.setText(testJar.getTest());
+        txtView2.setText(testJar2.getTest());
     }
 }
